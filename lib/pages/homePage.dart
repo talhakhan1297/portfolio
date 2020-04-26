@@ -8,31 +8,42 @@ class HomePage extends StatelessWidget {
 
   Widget _buildAppbar(BuildContext context) {
     return AppBar(
-      title: Padding(
-        padding: EdgeInsets.only(left: deviceWidth(context) * 0.05),
-        child: Text(
-          "Talha Javed Khan",
-          style: Theme.of(context).textTheme.subtitle1,
-        ),
-      ),
+      title: ResponsiveWidget.isSmallScreen(context)
+          ? Text("")
+          : Padding(
+              padding: EdgeInsets.only(left: deviceWidth(context) * 0.05),
+              child: Text("Talha Javed Khan",
+                  style: Theme.of(context).textTheme.subtitle1),
+            ),
       actions: <Widget>[
         Padding(
-          padding: EdgeInsets.only(right: deviceWidth(context) * 0.025),
+          padding: ResponsiveWidget.isSmallScreen(context)
+              ? EdgeInsets.only(right: 0)
+              : EdgeInsets.only(right: deviceWidth(context) * 0.025),
           child: FlatButton(
+            padding: EdgeInsets.all(0),
             onPressed: () {},
             child: Text(
               "About",
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyText1.copyWith(
+                  fontSize: ResponsiveWidget.isSmallScreen(context)
+                      ? deviceHeight(context) * 0.02
+                      : 14),
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: deviceWidth(context) * 0.025),
+          padding: ResponsiveWidget.isSmallScreen(context)
+              ? EdgeInsets.only(right: 0)
+              : EdgeInsets.only(right: deviceWidth(context) * 0.025),
           child: FlatButton(
             onPressed: () {},
             child: Text(
               "Portfolio",
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyText1.copyWith(
+                  fontSize: ResponsiveWidget.isSmallScreen(context)
+                      ? deviceHeight(context) * 0.02
+                      : 14),
             ),
           ),
         ),
