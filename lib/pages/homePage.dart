@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/elements/button.dart';
+import 'package:portfolio/pages/portfolio.dart';
 import 'package:portfolio/pages/profile.dart';
 import 'package:portfolio/style/dimensions.dart';
 
@@ -61,8 +62,8 @@ class HomePage extends StatelessWidget {
       appBar: _buildAppbar(context),
       body: ListView(
         children: <Widget>[
-          Profile(),
-          // Portfolio(),
+          // Profile(),
+          Portfolio(),
           // Contact(),
         ],
       ),
