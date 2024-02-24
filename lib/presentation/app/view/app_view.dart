@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:portfolio/presentation/utils/theme/theme.dart';
+part of 'view.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -10,7 +9,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       darkTheme: themeData,
-      home: const Scaffold(body: Center(child: Text('Hello'))),
+      home: const HomeView(),
     );
   }
 }

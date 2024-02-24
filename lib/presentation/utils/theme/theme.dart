@@ -1,5 +1,6 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 part 'color_scheme.dart';
 part 'text_theme.dart';
@@ -10,6 +11,5 @@ final ThemeData themeData = ThemeData(
   colorScheme: _colorScheme,
   textTheme: _textTheme,
   fontFamily: _textStyles.fontFamily,
-  primaryColor: Colors.white,
-  scaffoldBackgroundColor: const Color(0xFF101729),
+  scaffoldBackgroundColor: const Color.fromRGBO(16, 23, 41, 1),
 );

@@ -27,17 +27,25 @@ extension CustomTextThemeContext on BuildContext {
 }
 
 extension TextStyleWeight on TextStyle {
-  TextStyle get semibold => copyWithGoogleFont(fontWeight: FontWeight.w600);
+  TextStyle get black => copyWith(fontWeight: FontWeight.w900);
 
-  TextStyle get medium => copyWithGoogleFont(fontWeight: FontWeight.w500);
+  TextStyle get extraBold => copyWith(fontWeight: FontWeight.w800);
 
-  TextStyle get regular => copyWithGoogleFont(fontWeight: FontWeight.w400);
+  TextStyle get bold => copyWith(fontWeight: FontWeight.w700);
 
-  TextStyle get light => copyWithGoogleFont(fontWeight: FontWeight.w300);
+  TextStyle get semibold => copyWith(fontWeight: FontWeight.w600);
+
+  TextStyle get medium => copyWith(fontWeight: FontWeight.w500);
+
+  TextStyle get regular => copyWith(fontWeight: FontWeight.w400);
+
+  TextStyle get light => copyWith(fontWeight: FontWeight.w300);
+
+  TextStyle setLetterSpacing(double space) => copyWith(letterSpacing: space);
 }
 
 extension TextStyleColor on TextStyle {
-  TextStyle withColor(Color? color) => copyWithGoogleFont(color: color);
+  TextStyle withColor(Color? color) => copyWith(color: color);
 
   TextStyle primary(BuildContext context) => withColor(context.primary);
   TextStyle onPrimary(BuildContext context) => withColor(context.onPrimary);
@@ -133,24 +141,4 @@ extension ColorSchemeContext on BuildContext {
   Color get onInverseSurface => colorScheme.onInverseSurface;
   Color get inversePrimary => colorScheme.inversePrimary;
   Color get surfaceTint => colorScheme.surfaceTint;
-}
-
-extension GoogleFontCopy on TextStyle {
-  TextStyle copyWithGoogleFont({
-    FontWeight? fontWeight,
-    double? fontSize,
-    Color? color,
-    double? height,
-    TextDecoration? decoration,
-  }) {
-    return GoogleFonts.jost(
-      textStyle: copyWith(
-        fontWeight: fontWeight,
-        fontSize: fontSize,
-        color: color,
-        height: height,
-        decoration: decoration,
-      ),
-    );
-  }
 }
